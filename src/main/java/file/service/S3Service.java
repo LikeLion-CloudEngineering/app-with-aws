@@ -57,7 +57,7 @@ public class S3Service {
 		AttachmentFile attachmentFile = AttachmentFile.builder() // Entity 생성
 													  .filePath(filePath)
 													  .attachmentOriginalFileName(attachmentOriginalFileName)
-													  .attachmentFileName(attachmentFileName);
+													  .attachmentFileName(attachmentFileName)
 													  .attachmentFileSize(attachmentFileSize)
 													  .build();
 		
