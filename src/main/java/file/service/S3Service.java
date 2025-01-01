@@ -55,11 +55,11 @@ public class S3Service {
 		Long attachmentFileSize = file.getSize();
 		
 		AttachmentFile attachmentFile = AttachmentFile.builder() // Entity 생성
-													  .filePath(filePath)
-													  .attachmentOriginalFileName(attachmentOriginalFileName)
-													  .attachmentFileName(attachmentFileName)
-													  .attachmentFileSize(attachmentFileSize)
-													  .build();
+												.filePath(filePath)
+												.attachmentOriginalFileName(attachmentOriginalFileName)
+												.attachmentFileName(attachmentFileName)
+												.attachmentFileSize(attachmentFileSize)
+												.build();
 		
 		// DB 저장
 //		fileRepository.save(attachmentFile);

@@ -35,9 +35,9 @@ public class AttachmentFile extends BaseEntity{
 	private Long attachmentFileSize; 			// 파일 크기
 	
 	@Builder
-	public AttachmentFile(long attachmentFileNo, String filePath, String attachmentFileName,
+	public AttachmentFile(String filePath, String attachmentFileName, // long attachmentFileNo, 
 			String attachmentOriginalFileName, Long attachmentFileSize) {
-		this.attachmentFileNo = attachmentFileNo;
+//		this.attachmentFileNo = attachmentFileNo;
 		this.filePath = filePath;
 		this.attachmentFileName = attachmentFileName;
 		this.attachmentOriginalFileName = attachmentOriginalFileName;
