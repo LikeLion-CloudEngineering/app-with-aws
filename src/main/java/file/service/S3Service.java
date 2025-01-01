@@ -4,6 +4,9 @@ import java.io.File;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
@@ -48,18 +51,16 @@ public class S3Service {
 		
 			// file이 있다면...
 		// 속성값 정보 가져오기 및 Entitiy 생성 
-		/* Windows 로컬용 */
+		/* Windows 로컬용 
 		String filePath = "C://CE//97.data//" + DIR_NAME;
-		/* Linux Ubuntu EC2 용 
-		String filePath = "/home/ubuntu/app/" + DIR_NAME;
-		Paths.get(filePath);
-		try {
-            Files.createDirectories(path);
-            System.out.println("Directory created successfully!");
-        } catch (Exception e) {
-            System.err.println("Error creating directory: " + e.getMessage());
-        }
 		*/
+		/* Linux Ubuntu EC2 용 */
+		String filePath = "/home/ubuntu/app/" + DIR_NAME;
+		File linux_directory = new File(filePath);
+		
+		boolean linux_dir = linux_directory.mkdirs();
+		System.out.println("Linux 디렉토리 생성 결과 : " + linux_dir);
+		
 		String attachmentOriginalFileName = file.getOriginalFilename();
 		UUID uuid = UUID.randomUUID();
 		String attachmentFileName = uuid.toString() + "_" + attachmentOriginalFileName;
