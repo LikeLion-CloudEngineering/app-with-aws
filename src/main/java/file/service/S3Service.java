@@ -48,7 +48,18 @@ public class S3Service {
 		
 			// file이 있다면...
 		// 속성값 정보 가져오기 및 Entitiy 생성 
+		/* Windows 로컬용 */
 		String filePath = "C://CE//97.data//" + DIR_NAME;
+		/* Linux Ubuntu EC2 용 
+		String filePath = "/home/ubuntu/app/" + DIR_NAME;
+		Paths.get(filePath);
+		try {
+            Files.createDirectories(path);
+            System.out.println("Directory created successfully!");
+        } catch (Exception e) {
+            System.err.println("Error creating directory: " + e.getMessage());
+        }
+		*/
 		String attachmentOriginalFileName = file.getOriginalFilename();
 		UUID uuid = UUID.randomUUID();
 		String attachmentFileName = uuid.toString() + "_" + attachmentOriginalFileName;
